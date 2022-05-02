@@ -1,85 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
+
     <!--파비콘-->
     <link rel="icon" href="https://cdn.icon-icons.com/icons2/1211/PNG/128/1491580658-yumminkysocialmedia06_83104.png">
-
     <title>Instagram</title>
-    <style>
-        .header {
-            background-color: darkgray;
+    <link href="style.css" rel="stylesheet" type="text/css"/>
 
-            column-count: 3;
-            column-gap: 1%;
-        }
+    <script>
+        const myModal = document.getElementById('myModal');
+        const myInput = document.getElementById('myInput');
 
-        .logo {
-            background-color: red;
-            /*background-image: url("https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png");*/
-            /*background-position: center;*/
-            /*background-size: cover;*/
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        })
 
-            /*width: 30%;*/
-            /*height: 10%;*/
-        }
-
-        .search {
-            background-color: aqua;
-        }
-
-        .menu {
-            background-color: blue;
-        }
-
-        .input_search {
-            width: 200px;
-            height: 12px;
-            padding: 5px 5px;
-
-            box-sizing: content-box;
-
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: #fafafa;
-
-
-            background-image: url("/static/magni.png");
-            background-position: 13px center;
-            background-size: contain;
-            background-repeat: no-repeat;
-
-            text-indent: 30px;
-            font-size: 13px;
-        }
-
-        .input_search:focus {
-            background-image: none;
-            background-position: -10px center;
-            text-indent: 0;
-        }
-    </style>
+    </script>
 
 </head>
-<body>
-<header class="header">
-    <div class="logo">
-        <img src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
-    </div>
-    <div class="search">
-        <input class="input_search" type="search" placeholder="검색">
-    </div>
-    <div class="menu">
-        홈
-        메세지
-        새 게시물 만들기
-        나침반
-        상태
-        프로필
-    </div>
-</header>
 
+<body>
+<nav>
+    <div class="head">
+        <div class="logo">
+            <img style="cursor: pointer" alt="logo"
+                 src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png">
+        </div>
+        <div>
+            <label>
+                <input class="input_search" type="search" placeholder="검색">
+            </label>
+        </div>
+        <div class="menu">
+            <img src="/static/home.png" alt="home">
+            <img src="/static/dm.png" alt="DM">
+            <img src="/static/explore.png" alt="explore">
+            <img src="/static/compass.png" alt="compass">
+            <img src="/static/heart.png" alt="heart">
+            <img src="/static/myprofill.png" alt="myprofill">
+        </div>
+    </div>
+</nav>
+<section>
+    <div class="feeds">
+        <article>
+            <header>
+                <div class="profile-of-article">
+                    <img class="img-profile" style="border-radius: 100%"
+                         src="/static/myprofill.png"
+                         alt="myprofill">
+                    <span class="userID main-id point-span">Kmingky</span>
+                </div>
+                <button class="mybtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img class="icon-react icon-more"
+                         src="/static/more.png" alt="more">
+                </button>
+            </header>
+            <div class="main-image">
+                <img src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg"
+                     alt="Kmingky님의 피드 사진">
+            </div>
+            <div class="icons-react">
+                <div class="icons-left">
+                    <img class="icon-react"
+                         src="/static/heart.png" alt="heart">
+                    <img class="icon-react"
+                         src="/static/comment.png" alt="comment">
+                    <img class="icon-react" src="/static/dm.png" alt="DM">
+                </div>
+                <img class="icon-react"
+                     src="/static/save.png" alt="save">
+            </div>
+            <div class="reaction">
+                <div class="liked-people">
+                    <img class="pic"
+                         src="/static/myprofill.png"
+                         alt="myprofill">
+                    <p><span class="point-span"> rlatjsals </span>님 <span class="point-span">여러명</span>이 좋아합니다</p>
+                </div>
+                <div class="description">
+                    <p><span class="point-span userID">Kmingky</span><span class="at-tag">#동산 #일몰 #후보정</span> 둥근해가 점점..
+                    </p>
+                </div>
+                <div class="comment-section">
+                    <ul class="comments">
+                        <li>
+                            <span><span class="point-span userID">qkrwogus</span>우리 집 뒤에 동산인가?</span>
+                            <img class="comment-heart"
+                                 src="/static/heart.png" alt="comh">
+                        </li>
+                        <li>
+                            <span><span class="point-span userID">rlatjsals</span>보정 직접 했남?</span>
+                            <img class="comment-heart"
+                                 src="/static/heart.png" alt="comh">
+                        </li>
+                    </ul>
+                    <div class="time-log">
+                        <span>13시간 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hl"></div>
+            <div class="comment">
+                <img class="emojiicon" src="/static/emoji.png" alt="emoji">
+                <label>
+                    <input class="input-comment" type="text" placeholder="댓글 달기...">
+                </label>
+                <button type="submit" class="submit-comment" disabled>게시</button>
+            </div>
+        </article>
+
+        <article>
+            <header>
+                <div class="profile-of-article">
+                    <img class="img-profile" style="border-radius: 100%"
+                         src="/static/myprofill.png"
+                         alt="myprofill">
+                    <span class="userID main-id point-span">Kmingky</span>
+                </div>
+                <button class="mybtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img class="icon-react icon-more"
+                         src="/static/more.png" alt="more">
+                </button>
+            </header>
+            <div class="main-image">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://cdn.pixabay.com/photo/2018/10/11/09/24/slr-camera-3739242_960_720.jpg"
+                                 class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.pixabay.com/photo/2018/10/16/21/03/slr-camera-3752493_960_720.jpg"
+                                 class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://cdn.pixabay.com/photo/2018/03/28/01/04/water-3267961_960_720.jpg"
+                                 class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <div class="icons-react">
+                <div class="icons-left">
+                    <img class="icon-react"
+                         src="/static/heart.png" alt="heart">
+                    <img class="icon-react"
+                         src="/static/comment.png" alt="comment">
+                    <img class="icon-react" src="/static/dm.png" alt="DM">
+                </div>
+                <img class="icon-react"
+                     src="/static/save.png" alt="save">
+            </div>
+            <div class="reaction">
+                <div class="liked-people">
+                    <img class="pic"
+                         src="/static/myprofill.png"
+                         alt="myprofill">
+                    <p><span class="point-span"> rlatjsals </span>님 <span class="point-span">여러명</span>이 좋아합니다</p>
+                </div>
+                <div class="description">
+                    <p><span class="point-span userID">Kmingky</span><span class="at-tag">#내카메라 #신상 #대출혈</span></p>
+                </div>
+                <div class="comment-section">
+                    <ul class="comments">
+                        <li>
+                            <span><span class="point-span userID">tlsgPWkd</span>ㅋㅋ대출혈</span>
+                            <img class="comment-heart"
+                                 src="/static/heart.png" alt="comh">
+                        </li>
+                        <li>
+                            <span><span class="point-span userID">qkrwogus</span>드디어 산건가?</span>
+                            <img class="comment-heart"
+                                 src="/static/heart.png" alt="comh">
+                        </li>
+                    </ul>
+                    <div class="time-log">
+                        <span>45분 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hl"></div>
+            <div class="comment">
+                <img class="emojiicon" src="/static/emoji.png" alt="emoji">
+                <label>
+                    <input class="input-comment" type="text" placeholder="댓글 달기...">
+                </label>
+                <button type="submit" class="submit-comment" disabled>게시</button>
+            </div>
+        </article>
+
+        <article>
+            <header>
+                <div class="profile-of-article">
+                    <img class="img-profile" style="border-radius: 100%"
+                         src="/static/myprofill.png"
+                         alt="myprofill">
+                    <span class="userID main-id point-span">Kmingky</span>
+                </div>
+                <button class="mybtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <img class="icon-react icon-more"
+                         src="/static/more.png" alt="more">
+                </button>
+            </header>
+            <div class="main-image">
+                <img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/tree-276014_960_720.jpg"
+                     alt="Kmingky님의 피드 사진">
+            </div>
+            <div class="icons-react">
+                <div class="icons-left">
+                    <img class="icon-react"
+                         src="/static/heart.png" alt="heart">
+                    <img class="icon-react"
+                         src="/static/comment.png" alt="comment">
+                    <img class="icon-react" src="/static/dm.png" alt="DM">
+                </div>
+                <img class="icon-react"
+                     src="/static/save.png" alt="save">
+            </div>
+            <div class="reaction">
+                <div class="liked-people">
+                    <img class="pic"
+                         src="/static/myprofill.png"
+                         alt="myprofill">
+                    <p><span class="point-span"> rlatjsals </span>님 <span class="point-span">여러명</span>이 좋아합니다</p>
+                </div>
+                <div class="description">
+                    <p><span class="point-span userID">Kmingky</span><span class="at-tag">#집앞 #공원 #접사</span> 🌱</p>
+                </div>
+                <div class="comment-section">
+                    <ul class="comments">
+                        <li>
+                            <span><span class="point-span userID">tlsgPWkd</span>네가 찍은거 맞아요????</span>
+                            <img class="comment-heart"
+                                 src="/static/heart.png" alt="comh">
+                        </li>
+                        <li>
+                            <span><span class="point-span userID">qkrwogus</span>여기 어디야?</span>
+                            <img class="comment-heart"
+                                 src="/static/heart.png" alt="comh">
+                        </li>
+                        <li>
+                            <span><span class="point-span userID">rlatjsals</span>누구랑 간겨??</span>
+                            <img class="comment-heart"
+                                 src="/static/heart.png" alt="comh">
+                        </li>
+                    </ul>
+                    <div class="time-log">
+                        <span>45분 전</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hl"></div>
+            <div class="comment">
+                <img class="emojiicon" src="/static/emoji.png" alt="emoji">
+                <label>
+                    <input class="input-comment" type="text" placeholder="댓글 달기...">
+                </label>
+                <button type="submit" class="submit-comment" disabled>게시</button>
+            </div>
+        </article>
+
+    </div>
+    <div class="main-right">
+        <div class="myProfile">
+            <img class="pic"
+                 src="/static/myprofill.png"
+                 alt="Kmingky님의 프로필 사진">
+            <div>
+                <span class="userID point-span">Kmingky</span>
+                <span class="sub-span">김민기</span>
+            </div>
+            <span class="btn-exchange">전환</span>
+        </div>
+        <div class="section-recommend">
+            <div class="menu-title">
+                <span class="sub-title">회원님을 위한 추천</span>
+                <span class="find-more">모두 보기</span>
+            </div>
+            <ul class="recommend-list">
+                <li>
+                    <div class="recommend-friend-profile">
+                        <img class="img-profile"
+                             src="/static/myprofill.png"
+                             alt="rlatjsals님의 프로필 사진">
+                        <div class="profile-text">
+                            <span class="userID point-span">rlatjsals</span>
+                            <span class="sub-span">회원님을 팔로우합니다</span>
+                        </div>
+                        <span class="btn-follow">팔로우</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="recommend-friend-profile">
+                        <img class="img-profile"
+                             src="/static/myprofill.png"
+                             alt="rlatjsals님의 프로필 사진">
+                        <div class="profile-text">
+                            <span class="userID point-span">qkrwogus</span>
+                            <span class="sub-span">회원님을 팔로우합니다</span>
+                        </div>
+                        <span class="btn-follow">팔로우</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="recommend-friend-profile">
+                        <img class="img-profile"
+                             src="/static/myprofill.png"
+                             alt="rlatjsals님의 프로필 사진">
+                        <div class="profile-text">
+                            <span class="userID point-span">rlatjsals</span>
+                            <span class="sub-span">회원님을 팔로우합니다</span>
+                        </div>
+                        <span class="btn-follow">팔로우</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <p class="insta-sccript">
+                소개 ∙ 도움말 ∙ 홍보 센터 ∙ API ∙ 채용 정보 ∙ <br>개인정보처리방침 ∙ 약관 ∙ 위치 ∙ 인기계정 ∙ 해시태그 ∙ 언어
+                <br><br>
+                © 2022 INSTAGRAM FROM META
+            </p>
+        </footer>
+    </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-ing">
+                <span>신고</span>
+            </div>
+            <div class="modal-ing">
+                <span>팔로우 취소</span>
+            </div>
+            <div class="modal-ing">
+                게시물로 이동
+            </div>
+            <div class="modal-ing">
+                공유대상...
+            </div>
+            <div class="modal-ing">
+                링크복사
+            </div>
+            <div class="modal-ing">
+                퍼가기
+            </div>
+            <div class="modal-ing" data-bs-dismiss="modal">
+                취소
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
